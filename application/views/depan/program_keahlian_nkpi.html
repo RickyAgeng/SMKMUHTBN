@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Pelayaran Muhammadiyah Tuban</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .navbar {
+            background-color: #007bff; /* Biru */
+        }
+        .navbar .nav-link,
+        .navbar .navbar-brand {
+            color: #ffffff !important; /* Putih */
+        }
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active,
+        .navbar .navbar-brand:hover {
+            color: #cce5ff !important; /* Warna putih sedikit kebiruan saat hover dan aktif */
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .active {
+            font-weight: bold;
+        }
+        .atas-footer {
+            background-color: #121026;
+            color: white;
+            padding: 60px 0;
+            width: 100%;
+        }
+        .footer {
+            background-color: #090818;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            width: 100%;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .sambutan-container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        .sambutan-container img {
+            border-radius: 8px;
+            width: 250px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .sambutan-container .sambutan-text {
+            max-height: 270px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.5s ease;
+            text-align: justify; /* Tambahkan properti ini untuk rata kiri kanan */
+            background-color: #F2F2F2; /* Warna latar belakang abu-abu muda */
+            padding: 20px; /* Tambahkan padding untuk ruang dalam */
+            border-radius: 8px; /* Tambahkan border-radius untuk sudut melengkung */
+            margin-top: 20px; /* Tambahkan margin-top untuk memberi jarak */
+        }
+        .sambutan-container .sambutan-text.more {
+            max-height: none;
+        }
+        .sambutan-container .read-more {
+            color: blue;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+        }
+        .heading-blue {
+            background-color: #007bff; /* Biru */
+            color: white; /* Putih */
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left; /* Rata kiri */
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            border-radius: 30px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '>';
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+        .school-logo {
+            width: 150px;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+        .text-container {
+            margin-left: 50px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .social-icons a:last-child {
+            margin-right: 20px;
+        }
+
+        .search-section,
+        .calendar-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .search-section .heading-blue,
+        .calendar-section .heading-blue {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calendar .month-indicator {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .calendar .day-of-week {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .calendar .date-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            width: 100%;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .calendar .date-grid button {
+            background-color: #f8f9fa;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calendar .date-grid button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .identity-table {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            border-collapse: collapse;
+        }
+
+        .identity-table th, .identity-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .identity-table th {
+            background-color: #007bff;
+            color: white;
+            text-align: left;
+        }
+
+        .visi-misi-section {
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .visi-misi-section .text-content {
+            flex: 1;
+            padding: 20px;
+            padding-left: 50px; /* Menambahkan jarak pada sisi kiri */
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            
+        }
+
+        .visi-misi-section .image-content {
+            flex: 1;
+        }
+
+        .visi-misi-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .visi-misi-section h3 {
+            color: #FF6F61;
+            font-weight: bold;
+        }
+
+        .visi-misi-section p {
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="./images/logo.png" alt=""> SMK Pelayaran Muhammadiyah Tuban
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guru_karyawan.html">Guru & Karyawan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">PPDB</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="galeriDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Galeri
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="galeriDropdown">
+                        <a class="dropdown-item" href="#">Kegiatan Kurikulum</a>
+                        <a class="dropdown-item" href="#">Kegiatan Kesiswaan</a>
+                        <a class="dropdown-item" href="#">Kegiatan Humas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hubungi Kami</a>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+
+    <div class="container section">
+        <section class="mt-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="heading-blue">Nautika Kapal Penangkap Ikan</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Program Keahlian NKPI</li>
+                        </ol>
+                    </nav>
+                    <div class="embed-responsive embed-responsive-16by9 mb-3">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_jnnxQxapnY" allowfullscreen></iframe>
+                    </div>                    
+                    <div class="sambutan-text" id="sambutanText">
+                        <p>NKPI Merupakan disiplin ilmu yang mempelajari Nautika dan Perikanan. Nautika mempelajari tentang teknik bernavigasi dengan menggunakan kapal laut serta teknik dasar keselamatan di atas kapal. Sedangkan Perikanan mempelajari teknik dan metode penangkapan ikan.</p>
+                        <p>Program Studi NKPI merupakan program yang telah direkomendasikan Direktorat Jenderal Perhubungan Laut sehingga lulusan NKPI mendapatkan 2 Ijasah, yakni Ijasah Profesi Pelaut "ANKAPIN II" dari Kementrian Perhubungan dan Ijasah Sekolah dari Kementrian Pendidikan.</p>
+                        <p>Ijasah ANKAPIN Tk. II ini dikapal perikanan bisa berkedudukan sebagai Perwira Kapal ( Mualim ) atau Nahkoda / Kapten Kapal ( untuk kapal >150 GT dengan pelayaran dalam negeri sampai ZEE ).</p>
+                    </div>
+                    
+                    <h3 class="mt-4">1. Tujuan Program Keahlian</h3>
+                    <p>Membekali peserta didik dengan keterampilan, pengetahuan, dan sikap agar kompeten dalam:</p>
+                    <ul>
+                        <li>Melakukan pekerjaan sebagai Anak Buah Kapal (ABK) Perikanan bagian deck</li>
+                        <li>Mengembangkan pelayanan sebagai ABK Perikanan bagian deck</li>
+                        <li>Melakukan pekerjaan sebagai Anak Buah Kapal (ABK) Perikanan bagian deck yang profesional dalam bidang</li>
+                        <li>Melakukan pekerjaan sebagai Anak Buah Kapal (ABK) Perikanan bagian deck yang profesional dalam bidang penanganan hasil tangkapan di atas kapal</li>
+                        <li>Melakukan pekerjaan sebagai Anak Buah Kapal (ABK) Perikanan bagian deck yang profesional dalam bidang perawatan kapal ikan dan alat tangkapnya</li>
+                        <li>Melakukan pekerjaan sebagai Anak Buah Kapal (ABK) Perikanan bagian deck yang profesional dalam bidang navigasi dan pencarian fishing ground</li>
+                    </ul>
+
+                    <h3 class="mt-4">2. Profil Tamatan</h3>
+                    <p>Tamatan Program Keahlian NKPI diharapkan memiliki profil kompetensi umum yang mengacu kepada tujuan pendidikan nasional dan kecakapan hidup generik, dan kompetensi kejuruan yang mengacu kepada SKKNI STCW-F Amandemen 1995.</p>
+
+                    <h4>a. Kompetensi Umum</h4>
+                    <p>Berdasarkan UUSPN, profil kompetensi tamatan adalah :</p>
+                    <ul>
+                        <li>Beriman</li>
+                        <li>Berakhlak mulia</li>
+                        <li>Sehat</li>
+                        <li>Cakap</li>
+                        <li>Kreatif</li>
+                        <li>Mandiri</li>
+                        <li>Demokratis</li>
+                        <li>Tanggung jawab</li>
+                    </ul>
+                    <p>Berdasarkan tuntutan dunia kerja, profil kompetensi tamatan adalah:</p>
+                    <ul>
+                        <li>Disiplin</li>
+                        <li>Jujur</li>
+                    </ul>
+
+                    <h4>b. Kompetensi Kejuruan</h4>
+                    <p>Level kualifikasi tamatan Program Keahlian NKPI adalah Perwira / Mualim sampai Nakhoda kapal perikanan dengan ukuran panjang 12 – 14 meter atau dengan tenaga penggerak mesin kapal ‹ 750 kW. Pada level ini tamatan memiliki kompetensi berikut:</p>
+                    <ul>
+                        <li>Merencanakan pelayaran, menentukan posisi dan arah haluan kapal di zona dan lepas pantai</li>
+                        <li>Melakukan dinas jaga di kapal</li>
+                        <li>Menentukan posisi kapal dengan radar</li>
+                        <li>Mengoperasikan dan merawat kompas magnit dan kompas gasing (gyro compass)</li>
+                        <li>Mengidentifikasi berbagai macam parameter meteorologi dan oceanografi untuk kepentingan pelayaran</li>
+                        <li>Mengolah gerak dan mengendalikan kapal perikanan</li>
+                        <li>Mengidentifikasi struktur bangunan kapal dan stabilitas kapal perikanan</li>
+                        <li>Mengoperasikan instalasi tenaga penggerak utama kapal</li>
+                        <li>Melakukan pencegahan dan pemadaman kebakaran</li>
+                        <li>Menerapkan prosedur darurat dan SAR</li>
+                        <li>Menerapkan pelayanan medis di atas kapal</li>
+                        <li>Menerapkan hukum laut dan peraturan perikanan</li>
+                        <li>Melakukan berbagai jenis komunikasi di kapal</li>
+                        <li>Menerapkan prosedur penyelamatan diri di atas kapal</li>
+                        <li>Menerapkan keselamatan dan kesehatan kerja</li>
+                        <li>Menerapkan hubungan kemanusiaan dan tanggung jawab sosial di atas kapal</li>
+                        <li>Menerapkan tata laksana perikanan yang bertanggung jawab</li>
+                        <li>Menerapkan penanganan dan penyimpanan hasil tangkap</li>
+                        <li>Melakukan penangkapan ikan dengan berbagai alat</li>
+                        <li>Menerapkan prinsip-prinsip manajemen kapal penangkap ikan</li>
+                        <li>Melakukan kegiatan di pelabuhan sesuai peraturan yang berlaku</li>
+                        <li>Menggunakan sistem elektronik untuk navigasi dan penangkapan ikan</li>
+                        <li>Melakukan perawatan alat tangkap ikan</li>
+                        <li>Pencegahan polusi lingkungan laut</li>
+                    </ul>
+
+                    <h3 class="mt-4">3. Ruang Lingkup Pekerjaan</h3>
+                    <p>Ruang lingkup pekerjaan tamatan Program Keahlian NKPI sebagai berikut : </p>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Dunia Usaha/Industri</th>
+                                <th>Lingkup Pekerjaan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nautika Perikanan Laut</td>
+                                <td>
+                                    <ul>
+                                        <li>Ahli Nautika Perikanan Laut</li>
+                                        <li>Deck Hand</li>
+                                        <li>Perwira Kapal Perikanan</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Usaha Perikanan Tangkap</td>
+                                <td>
+                                    <ul>
+                                        <li>Operator Alat Penangkapan Ikan</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Perakitan/Assembly</td>
+                                <td>
+                                    <ul>
+                                        <li>Teknisi Perakitan Alat Tangkap Ikan</li>
+                                        <li>Teknisi Perawatan Kapal dan Alat Tangkap Ikan</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <p>Lulusan NKPI dapat bekerja di kapal-kapal luar negeri dengan gaji yang menggiurkan antara lain di Jepang, Korea, Taiwan. Setiap tahun perusahaan Jepang datang ke sekolah untuk menyeleksi taruna taruna untuk program rekruitmen magang dikapal Jepang.</p>
+                    <p>Lulusan NKPI jug banyak bekerja di instansi pemerintahan diantaranya Polisi, TNI, Kementrian Kelautan Perikanan, kapal Direktorat Bea Cukai Kementrian Keuangan, Badan SAR Nasional, Badan Koordinasi Keamanan Laut dan lain sebagainya.</p>
+
+                    <h3 class="mt-4">4. Fasilitas NKPI</h3>
+                    <ul>
+                        <li>Alat Olahraga Angkat Beban</li>
+                        <li>Peralatan Jaring</li>
+                    </ul>
+
+                    <h3 class="mt-4">5. Guru Pengajar Produktif NKPI</h3>
+                    <ul>
+                        <li>Margo Santoso, S.Pi.,M.Pd</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="search-section">
+                        <h2 class="heading-blue">Search</h2>
+                        <form class="form-inline mb-3">
+                            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="calendar-section">
+                        <h2 class="heading-blue">Kalender</h2>
+                        <div class="calendar">
+                            <div class="month-indicator">
+                                <time datetime="2024-07">July 2024</time>
+                            </div>
+                            <div class="day-of-week">
+                                <div>M</div>
+                                <div>T</div>
+                                <div>W</div>
+                                <div>T</div>
+                                <div>F</div>
+                                <div>S</div>
+                                <div>S</div>
+                            </div>
+                            <div class="date-grid">
+                                <button>1</button>
+                                <button>2</button>
+                                <button>3</button>
+                                <button>4</button>
+                                <button>5</button>
+                                <button>6</button>
+                                <button>7</button>
+                                <button>8</button>
+                                <button>9</button>
+                                <button>10</button>
+                                <button>11</button>
+                                <button>12</button>
+                                <button>13</button>
+                                <button>14</button>
+                                <button>15</button>
+                                <button>16</button>
+                                <button>17</button>
+                                <button>18</button>
+                                <button>19</button>
+                                <button>20</button>
+                                <button>21</button>
+                                <button>22</button>
+                                <button>23</button>
+                                <button>24</button>
+                                <button>25</button>
+                                <button>26</button>
+                                <button>27</button>
+                                <button>28</button>
+                                <button>29</button>
+                                <button>30</button>
+                                <button>31</button>
+                            </div>
+                            <a href="#" class="mt-2">« Jun</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <br><br>
+
+    <div class="container-fluid atas-footer">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-md-6 text-left d-flex align-items-center">
+                <img src="./images/logo.png" alt="SMK Pelayaran Muhammadiyah Tuban" class="school-logo">
+                <div class="text-container">
+                    <h1>SMK Pelayaran Muhammadiyah Tuban</h1>
+                    <p>Lulus 100% itu Biasa, Lulus Langsung Kerja itu Luar Biasa</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/smkpelayarantuban"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/smkpm_tuban/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@smkpelayaranmuhammadiyahtu9615"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SMK Pelayaran Muhammadiyah Tuban. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
