@@ -87,7 +87,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/tulisanahli'?>"><i class="fa fa-list"></i> List Keahlian</a></li>
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisanahli/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>

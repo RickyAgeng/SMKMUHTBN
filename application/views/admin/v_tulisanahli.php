@@ -83,7 +83,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/tulisanahli'?>"><i class="fa fa-list"></i> List Keahlian</a></li>
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisanahli/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>
@@ -195,13 +195,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        List Berita
+        List Program Keahlian
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Berita</a></li>
-        <li class="active">List Berita</li>
+        <li><a href="#">Program Keahlian</a></li>
+        <li class="active">List Program</li>
       </ol>
     </section>
 
@@ -213,7 +213,7 @@
 
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" href="<?php echo base_url().'admin/tulisan/add_tulisan'?>"><span class="fa fa-plus"></span> Post Tulisan</a>
+              <a class="btn btn-success btn-flat" href="<?php echo base_url().'admin/tulisanahli/add_tulisanahli'?>"><span class="fa fa-plus"></span> Post Tulisan</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -234,15 +234,15 @@
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
-          					   $tulisan_id=$i['tulisan_id'];
-          					   $tulisan_judul=$i['tulisan_judul'];
-          					   $tulisan_isi=$i['tulisan_isi'];
+          					   $tulisan_id=$i['tulisanahli_id'];
+          					   $tulisan_judul=$i['tulisanahli_judul'];
+          					   $tulisan_isi=$i['tulisanahli_isi'];
           					   $tulisan_tanggal=$i['tanggal'];
-          					   $tulisan_author=$i['tulisan_author'];
-          					   $tulisan_gambar=$i['tulisan_gambar'];
-          					   $tulisan_views=$i['tulisan_views'];
-                       $kategori_id=$i['tulisan_kategori_id'];
-                       $kategori_nama=$i['tulisan_kategori_nama'];
+          					   $tulisan_author=$i['tulisanahli_author'];
+          					   $tulisan_gambar=$i['tulisanahli_gambar'];
+          					   $tulisan_views=$i['tulisanahli_views'];
+                       $kategori_id=$i['tulisanahli_kategori_id'];
+                       $kategori_nama=$i['tulisanahli_kategori_nama'];
 
                     ?>
                 <tr>
@@ -254,7 +254,7 @@
         				  <td><?php echo $tulisan_views;?></td>
         				  <td><?php echo $kategori_nama;?></td>
                   <td style="text-align:right;">
-                        <a class="btn" href="<?php echo base_url().'admin/tulisan/get_edit/'.$tulisan_id;?>"><span class="fa fa-pencil"></span></a>
+                        <a class="btn" href="<?php echo base_url().'admin/tulisanahli/get_edit/'.$tulisan_id;?>"><span class="fa fa-pencil"></span></a>
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $tulisan_id;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>

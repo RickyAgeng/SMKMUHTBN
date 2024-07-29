@@ -1,5 +1,5 @@
 <?php
-class Tulisan extends CI_Controller{
+class Tulisanahli extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		if($this->session->userdata('masuk') !=TRUE){

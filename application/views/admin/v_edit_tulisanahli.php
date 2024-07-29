@@ -85,7 +85,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/tulisanahli'?>"><i class="fa fa-list"></i> List Keahlian</a></li>
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisanahli/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>
@@ -218,7 +218,7 @@
 		<?php
         $b=$data->row_array();
     ?>
-		<form action="<?php echo base_url().'admin/tulisan/update_tulisanahli'?>" method="post" enctype="multipart/form-data">
+		<form action="<?php echo base_url().'admin/tulisanahli/update_tulisanahli'?>" method="post" enctype="multipart/form-data">
 
         <!-- /.box-header -->
         <div class="box-body">
@@ -276,7 +276,7 @@
         					foreach ($kat->result_array() as $i) {
                                $kategori_id=$i['kategori_id'];
                                $kategori_nama=$i['kategori_nama'];
-                               if($b['tulisan_kategori_id']==$kategori_id)
+                               if($b['tulisanahli_kategori_id']==$kategori_id)
                                   echo "<option value='$kategori_id' selected>$kategori_nama</option>";
                                else
                                   echo "<option value='$kategori_id'>$kategori_nama</option>";

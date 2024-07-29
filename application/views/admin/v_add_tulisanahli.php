@@ -86,7 +86,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/tulisanahli'?>"><i class="fa fa-list"></i> List Keahlian</a></li>
-            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisanahli/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>
@@ -198,13 +198,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Keahlian
+        Program Keahlian
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Keahlian</a></li>
-        <li class="active">Add Keahlian</li>
+        <li><a href="#">Program Keahlian</a></li>
+        <li class="active">Add Program</li>
       </ol>
     </section>
 
@@ -214,10 +214,10 @@
       <!-- SELECT2 EXAMPLE -->
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Post Keahlian</h3>
+          <h3 class="box-title">Post Program Keahlian</h3>
         </div>
 
-		<form action="<?php echo base_url().'admin/tulisan/simpan_tulisanahli'?>" method="post" enctype="multipart/form-data">
+		<form action="<?php echo base_url().'admin/tulisanahli/simpan_tulisanahli'?>" method="post" enctype="multipart/form-data">
 
         <!-- /.box-header -->
         <div class="box-body">
@@ -246,7 +246,7 @@
 
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Keahlian</h3>
+              <h3 class="box-title">Program Keahlian</h3>
             </div>
             <div class="box-body">
 

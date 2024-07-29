@@ -192,7 +192,7 @@
     </div>
 </section>
 <!--//END ABOUT -->
-
+<!-- 
 <section class="mt-5">
     <div class="container">
         <h2 class="heading-blueprogram">Program Keahlian</h2>
@@ -235,7 +235,7 @@
                 </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!--============================= OUR Program Keahlian =============================-->
 <section class="our_courses">

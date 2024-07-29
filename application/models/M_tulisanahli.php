@@ -5,10 +5,10 @@ class M_tulisanahli extends CI_Model{
 		$hsl=$this->db->query("SELECT tbl_tulisanahli.*,DATE_FORMAT(tulisanahli_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisanahli ORDER BY tulisanahli_id DESC");
 		return $hsl;
 	}
-	function simpan_tulisanahli($judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$gambar,$slug){
-		$hsl=$this->db->query("insert into tbl_tulisanahli(tulisanahli_judul,tulisanahli_isi,tulisanahli_kategori_id,tulisanahli_kategori_nama,tulisanahli_img_slider,tulisanahli_pengguna_id,tulisanahli_author,tulisanahli_gambar,tulisanahli_slug) values ('$judul','$isi','$kategori_id','$kategori_nama','$imgslider','$user_id','$user_nama','$gambar','$slug')");
-		return $hsl;
-	}
+	function simpan_tulisanahli($judul, $isi, $kategori_id, $kategori_nama, $imgslider, $user_id, $user_nama, $gambar, $slug) {
+        $hsl = $this->db->query("INSERT INTO tbl_tulisanahli (tulisanahli_judul,tulisanahli_isi,tulisanahli_kategori_id,tulisanahli_kategori_nama,tulisanahli_img_slider,tulisanahli_pengguna_id,tulisanahli_author,tulisanahli_gambar,tulisanahli_slug) VALUES ('$judul', '$isi', '$kategori_id', '$kategori_nama', '$imgslider', '$user_id', '$user_nama', '$gambar', '$slug')");
+        return $hsl;
+    }
 	function get_tulisanahli_by_kode($kode){
 		$hsl=$this->db->query("SELECT tbl_tulisanahli.*,DATE_FORMAT(tulisanahli_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisanahli where tulisanahli_id='$kode'");
 		return $hsl;
