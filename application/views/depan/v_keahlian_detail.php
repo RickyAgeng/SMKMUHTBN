@@ -134,7 +134,7 @@
                 <div class="blog-tiltle_block">
                     <h4><a href="<?php echo site_url('keahlian/'.$slug);?>"><?php echo $title;?></a></h4>
                     <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $kategori;?></span></a></h6>
-                    <?php echo $keahlian;?>
+                    <?php echo $blog;?>
                 </div>
 
                 <div class="blog-tiltle_block">
@@ -271,9 +271,9 @@
                     <h3>Populer</h3>
                   <?php foreach ($populer->result() as $row) :?>
                     <div class="blog-featured-img_block">
-                        <img width="35%" src="<?php echo base_url().'assets/images/'.$row->tulisan_gambar;?>" class="img-fluid" alt="blog-featured-img">
-                        <h5><a href="<?php echo site_url('artikel/'.$row->tulisan_slug);?>"><?php echo limit_words($row->tulisan_judul,3).'...';?></a></h5>
-                        <p><?php echo limit_words($row->tulisan_isi,5).'...';?></p>
+                        <img width="35%" src="<?php echo base_url().'assets/images/'.$row->tulisanahli_gambar;?>" class="img-fluid" alt="blog-featured-img">
+                        <h5><a href="<?php echo site_url('keahlian/'.$row->tulisanahli_slug);?>"><?php echo limit_words($row->tulisanahli_judul,3).'...';?></a></h5>
+                        <p><?php echo limit_words($row->tulisanahli_isi,5).'...';?></p>
                     </div>
                     <hr>
                   <?php endforeach;?>

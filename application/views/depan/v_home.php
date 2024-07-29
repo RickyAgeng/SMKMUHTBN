@@ -83,9 +83,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('blog');?>">Kegiatan</a>
                                 </li>
@@ -352,7 +352,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom chart_top">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom chart_top">
                 <div class="chart-img">
                     <img src="<?php echo base_url().'theme/images/chart-icon_2.png'?>" class="img-fluid" alt="chart_icon">
                 </div>
@@ -360,7 +360,7 @@
                     <p><span class="counter"><?php echo $tot_siswa;?></span> Siswa
                     </p>
                 </div>
-            </div>
+            </div> -->
             <div class="col-xs-12 col-sm-6 col-md-3 chart_top">
                 <div class="chart-img">
                     <img src="<?php echo base_url().'theme/images/chart-icon_3.png'?>" class="img-fluid" alt="chart_icon">
@@ -411,7 +411,7 @@
                       <h3>Akademik</h3>
                       <ul>
                           <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                          <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
+                          <!-- <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li> -->
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                           <li><a href="<?php echo site_url('download');?>">Bahan Ajar</a></li>

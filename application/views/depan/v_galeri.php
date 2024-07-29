@@ -80,9 +80,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('blog');?>">Kegiatan</a>
                                 </li>
@@ -169,7 +169,7 @@
                       <h3>Akademik</h3>
                       <ul>
                           <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                          <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
+                          <!-- <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li> -->
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                           <li><a href="<?php echo site_url('download');?>">Bahan Ajar</a></li>

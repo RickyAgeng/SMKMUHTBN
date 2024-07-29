@@ -113,7 +113,7 @@
         </li>
         <li>
           <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Download</span>
+            <i class="fa fa-download"></i> <span>Bahan Ajar</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -479,9 +479,9 @@
 
 
 	<?php foreach ($data->result_array() as $i) :
-              $tulisan_id=$i['tulisan_id'];
-              $tulisan_judul=$i['tulisan_judul'];
-              $tulisan_gambar=$i['tulisan_gambar'];
+              $tulisan_id=$i['tulisanahli_id'];
+              $tulisan_judul=$i['tulisanahli_judul'];
+              $tulisan_gambar=$i['tulisanahli_gambar'];
             ?>
 	<!--Modal Hapus Pengguna-->
         <div class="modal fade" id="ModalHapus<?php echo $tulisan_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -491,7 +491,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Hapus Berita</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/tulisan/hapus_tulisan'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/tulisanahli/hapus_tulisanahli'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							       <input type="hidden" name="kode" value="<?php echo $tulisan_id;?>"/>
                      <input type="hidden" value="<?php echo $tulisan_gambar;?>" name="gambar">

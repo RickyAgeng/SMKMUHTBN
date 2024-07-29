@@ -160,7 +160,7 @@
                     <?php foreach ($populer->result() as $row) :?>
                       <div class="blog-featured-img_block">
                           <img width="35%" src="<?php echo base_url().'assets/images/'.$row->tulisanahli_gambar;?>" class="img-fluid" alt="blog-featured-img">
-                          <h5><a href="<?php echo site_url('artikel/'.$row->tulisanahli_slug);?>"><?php echo limit_words($row->tulisanahli_judul,3).'...';?></a></h5>
+                          <h5><a href="<?php echo site_url('keahlian/'.$row->tulisanahli_slug);?>"><?php echo limit_words($row->tulisanahli_judul,3).'...';?></a></h5>
                           <p><?php echo limit_words($row->tulisanahli_isi,5).'...';?></p>
                       </div>
                       <hr>

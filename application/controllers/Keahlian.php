@@ -62,7 +62,7 @@ class Keahlian extends CI_Controller{
 			$x['author']=$row['tulisanahli_author'];
 			$x['kategori']=$row['tulisanahli_kategori_nama'];
 			$x['slug']=$row['tulisanahli_slug'];
-			$x['show_komentar']=$this->m_tulisanahli->show_komentar_by_tulisanahli_id($kode);
+			$x['show_komentar']=$this->m_tulisanahli->show_komentar_by_tulisan_id($kode);
 			$x['category']=$this->db->get('tbl_kategori');
 			$x['populer']=$this->db->query("SELECT * FROM tbl_tulisanahli ORDER BY tulisanahli_views DESC LIMIT 5");
 			$this->load->view('depan/v_keahlian_detail',$x);

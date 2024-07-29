@@ -27,7 +27,7 @@ class Tulisanahli extends CI_Controller{
 		$x['kat']=$this->m_kategori->get_all_kategori();
 		$this->load->view('admin/v_edit_tulisanahli',$x);
 	}
-	function simpan_tulisan(){
+	function simpan_tulisanahli(){
 				$config['upload_path'] = './assets/images/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
