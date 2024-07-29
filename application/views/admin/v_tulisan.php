@@ -73,6 +73,20 @@
             <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-newspaper-o"></i>
+            <span>Keahlian</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url().'admin/tulisanahli'?>"><i class="fa fa-list"></i> List Keahlian</a></li>
+            <li><a href="<?php echo base_url().'admin/tulisan/add_tulisanahli'?>"><i class="fa fa-thumb-tack"></i> Post Keahlian</a></li>
+            <li><a href="<?php echo base_url().'admin/kategori'?>"><i class="fa fa-wrench"></i> Kategori</a></li>
+          </ul>
+        </li>
         <li>
           <a href="<?php echo base_url().'admin/pengguna'?>">
             <i class="fa fa-users"></i> <span>Pengguna</span>

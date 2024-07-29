@@ -129,7 +129,7 @@
                     <div class="blog-tiltle_block">
                         <h4><a href="<?php echo site_url('keahlian/'.$row->tulisanahli_slug);?>"><?php echo $row->tulisanahli_judul;?></a></h4>
                         <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $row->tulisanahli_author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $row->tulisanahli_kategori_nama;?></span></a></h6>
-                        <?php echo limit_words($row->tulisanahli_isi,10).'...';?>
+                        <?php echo $row->tulisanahli_isi;?>
                         <div class="blog-icons">
                             <div class="blog-share_block">
                                 <a href="<?php echo site_url('keahlian/'.$row->tulisanahli_slug);?>">Read More</a>

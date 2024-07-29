@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Add Post</title>
+  <title>Update Post</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" type="text/css" href="<?php echo base_url().'assets/images/favicon.png'?>">
@@ -44,7 +44,6 @@
    <?php
     $this->load->view('admin/v_header');
   ?>
-
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -198,13 +197,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Keahlian
+        Program Keahlian
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Keahlian</a></li>
-        <li class="active">Add Keahlian</li>
+        <li><a href="#">Program Keahlian</a></li>
+        <li class="active">Update Program</li>
       </ol>
     </section>
 
@@ -214,21 +213,24 @@
       <!-- SELECT2 EXAMPLE -->
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Post Keahlian</h3>
+          <h3 class="box-title">Update Program</h3>
         </div>
-
-		<form action="<?php echo base_url().'admin/tulisan/simpan_tulisanahli'?>" method="post" enctype="multipart/form-data">
+		<?php
+        $b=$data->row_array();
+    ?>
+		<form action="<?php echo base_url().'admin/tulisan/update_tulisanahli'?>" method="post" enctype="multipart/form-data">
 
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
             <div class="col-md-10">
-              <input type="text" name="xjudul" class="form-control" placeholder="Judul Program Keahlian" required/>
+              <input type="hidden" name="kode" value="<?php echo $b['tulisanahli_id'];?>">
+              <input type="text" name="xjudul" class="form-control" value="<?php echo $b['tulisanahli_judul'];?>" placeholder="Judul Program keahlian" required/>
             </div>
             <!-- /.col -->
             <div class="col-md-2">
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-flat pull-right"><span class="fa fa-pencil"></span> Publish</button>
+                <button type="submit" class="btn btn-primary btn-flat pull-right"><span class="fa fa-pencil"></span> Update</button>
               <!-- /.form-group -->
             </div>
             <!-- /.col -->
@@ -246,11 +248,11 @@
 
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Keahlian</h3>
+              <h3 class="box-title">Program Keahlian</h3>
             </div>
             <div class="box-body">
 
-			<textarea id="ckeditor" name="xisi" required></textarea>
+			       <textarea id="ckeditor" name="xisi" required><?php echo $b['tulisanahli_isi'];?></textarea>
 
             </div>
             <!-- /.box-body -->
@@ -270,30 +272,27 @@
                 <label>Kategori</label>
                 <select class="form-control select2" name="xkategori" style="width: 100%;" required>
                   <option value="">-Pilih-</option>
-				  <?php
-					$no=0;
-					foreach ($kat->result_array() as $i) :
-					   $no++;
-                       $kategori_id=$i['kategori_id'];
-                       $kategori_nama=$i['kategori_nama'];
+        				  <?php
+        					foreach ($kat->result_array() as $i) {
+                               $kategori_id=$i['kategori_id'];
+                               $kategori_nama=$i['kategori_nama'];
+                               if($b['tulisan_kategori_id']==$kategori_id)
+                                  echo "<option value='$kategori_id' selected>$kategori_nama</option>";
+                               else
+                                  echo "<option value='$kategori_id'>$kategori_nama</option>";
+                  }?>
 
-                    ?>
-                  <option value="<?php echo $kategori_id;?>"><?php echo $kategori_nama;?></option>
-				  <?php endforeach;?>
                 </select>
               </div>
 
 			  <div class="form-group">
                 <label>Gambar</label>
-                <input type="file" name="filefoto" style="width: 100%;" required>
+                <input type="file" name="filefoto" style="width: 100%;">
               </div>
               <!-- /.form group -->
 			 <div class="form-group">
-              <!--<label>
-                  <input type="checkbox" class="minimal" name="ximgslider" value="1">
-                   Tampilkan pada Image Slider
-                </label>
-              </div>-->
+
+              </div>
 
             </div>
             <!-- /.box-body -->
