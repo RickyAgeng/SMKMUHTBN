@@ -273,7 +273,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2017 <a href="#">MTs Tarbiyatul Falah</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2024 <a href="#"></a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
