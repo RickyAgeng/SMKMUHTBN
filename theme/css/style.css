@@ -4591,4 +4591,14 @@ div.panel p {
 	text-align: left;
 }
 
+
+.clickable-address {
+	color: blue;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.clickable-address:hover {
+	color: darkblue;
+}
+
 /* END PENDAHULUAN */
